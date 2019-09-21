@@ -1,11 +1,12 @@
 <template>
-<div>  
+<div id="app">  
   <questions-list :questions="questions"/>
-  </div>
+</div>
 </template>
 
 <script>
 import QuestionsList from './components/QuestionsList';
+import QuestionService from './services/QuestionService';
 
 export default {
 name: 'app',
@@ -16,7 +17,16 @@ data(){
     return{
         questions: []
     }
-}
+},
+mounted(){
+    this.fetchData();
+},
+methods: {
+    fetchData(){
+    QuestionService.getQuestions()
+    .then(questions => this.questions = questions)
+    }
+    }
 }
 </script>
 
