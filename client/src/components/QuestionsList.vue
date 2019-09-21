@@ -4,7 +4,7 @@
     <div> 
     <question-info v-for="(question, index) in questions" :key="index" :question="question"/> 
     </div>
-      </section>
+   </section>
 </template>
 
 <script>
