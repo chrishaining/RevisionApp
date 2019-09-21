@@ -8,14 +8,14 @@
 </template>
 
 <script>
-import QuestionInfo from "./components/QuestionInfo";
+// import QuestionInfo from "./components/QuestionInfo";
 
 export default {
 name: 'question-list',
-props: ['questions'],
-components: {
-    'question-info': QuestionInfo
-}
+props: ['questions']
+// components: {
+//     'question-info': QuestionInfo
+// }
 }
 </script>
 
