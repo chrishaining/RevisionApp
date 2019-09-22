@@ -7,6 +7,7 @@
 <script>
 import QuestionsList from './components/QuestionsList';
 import QuestionService from './services/QuestionService';
+import {eventBus} from '@/main';
 
 export default {
   name: 'app',
@@ -15,12 +16,17 @@ export default {
   },
   data(){
     return{
-      questions: []
+      questions: [],
+      selectedQuestion: null
     }
   },
   mounted(){
     QuestionService.getQuestions()
     .then(questions => this.questions = questions)
+
+  eventBus.$on('question-selected', question => {
+    this.selectedQuestion = question
+  })
   }
 }
 
