@@ -1,8 +1,7 @@
 <template>
   <section>
       <h2>Questions</h2>
-    <div v-for="question in questions">
-      <p>{{question.question}}</p>
+    <question-info v-for="question in questions" :question="question"/>
 
     </div>
    </section>
@@ -10,13 +9,15 @@
 
 <script>
 import QuestionService from '../services/QuestionService';
+import QuestionInfo from './QuestionInfo'
+import {eventBus} from '../main'
 
 export default {
 name: 'questions-list',
-props: ['questions']
-// components: {
-//     'question-info': QuestionInfo
-// }
+props: ['questions'],
+components: {
+    'question-info': QuestionInfo
+}
 }
 </script>
 

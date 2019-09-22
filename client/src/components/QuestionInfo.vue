@@ -6,6 +6,8 @@
 
 <script>
 export default {
+  name: 'question-info',
+  props: ['question']
 
 }
 </script>
