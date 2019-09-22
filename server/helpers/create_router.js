@@ -4,6 +4,7 @@ const ObjectId = require('mongodb').ObjectId;
 const createRouter = function (collection) {
   const router = express.Router();
 
+//index
   router.get('/', (req, res) => {
     collection
     .find()
@@ -15,6 +16,20 @@ const createRouter = function (collection) {
       res.json({status:500, error: err});
     });
   });
+
+//show a single card
+router.get('/:id', (req, res) => {
+  const id = req.params.id;
+  collection
+  .findOne({_id: ObjectId(id)})
+  .then((doc) => res.json(doc))
+  .catch((err) => {
+    console.console(err);
+    res.status(500);
+    res.json({status:500, error: err});
+  });
+});
+
   return router;
 }
 module.exports = createRouter;
