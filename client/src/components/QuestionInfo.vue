@@ -1,6 +1,8 @@
 <template>
-  <div v-if="question">
+  <div v-if="question" id="card">
       <p>{{question.question}}</p>
+      <p>{{question.answer}}</p>
+
   </div>
 </template>
 
@@ -12,6 +14,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+#card {
+  background-color: dodgerblue;
+}
 
 </style>
