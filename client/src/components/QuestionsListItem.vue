@@ -4,7 +4,6 @@
 </div>
 </template>
 
-
 <script>
 
 import {eventBus} from '../main'

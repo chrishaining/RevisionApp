@@ -6,7 +6,7 @@
       <thead>
         <tr>
           <th> -->
-    <questions-list-item v-for="question in questions" :question="question"/>
+    <questions-list-item v-for="(question, index) in questions" :key="index" :question="question"/>
 
      <!-- v-on:click="handleClick">{{question.question}}</question-info> -->
 
