@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="question">
       <p>{{question.question}}</p>
   </div>
 </template>
