@@ -9,12 +9,21 @@
         <p><a v-bind:href="question.url" target="_blank">{{question.url}}</a></p>
       </div>
     </div>
+    <button v-on:click="handleDelete">Delete question</button>
   </div>
 </template>
+
 <script>
+import {eventBus} from '../main'
+
 export default {
   name: 'question-info',
-  props: ['question']
+  props: ['question'],
+  methods: {
+    handleDelete: function() {
+      eventBus.$emit("question-delete", this.question._id);
+    }
+  }
 }
 </script>
 <style scoped>

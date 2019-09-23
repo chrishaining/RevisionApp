@@ -24,5 +24,11 @@ export default{
       }
     })
     .then(res => res.json())
+  },
+
+  deleteQuestion(id) {
+    return fetch(baseURL + id, {
+    method: 'DELETE'
+    })
   }
 }

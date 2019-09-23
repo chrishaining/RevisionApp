@@ -46,6 +46,13 @@ export default {
       this.questions.push(question)
     });
 
+    eventBus.$on('question-delete', (id) => {
+      QuestionService.deleteQuestion(id)
+      const index = this.questions.findIndex(question => question._id === id);
+      this.questions.splice(index, 1);
+});
+
+
   }
 }
 
