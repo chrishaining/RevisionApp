@@ -31,8 +31,12 @@ export default {
 
     eventBus.$on('question-selected', question => {
       this.selectedQuestion = question
-    })
-
+    });
+    eventBus.$on('question-update', questionToUpdate => {
+      const newQuestion = QuestionService.updateQuestion(questionToUpdate)
+      const index = this.questions.findIndex(question => question._id === questionToUpdate._id);
+      this.questions.splice(index, 1, newQuestion);
+    });
   }
 }
 
