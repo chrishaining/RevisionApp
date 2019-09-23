@@ -10,13 +10,13 @@ app.use(cors());
 
 
 MongoClient.connect('mongodb://localhost:27017')
-.then((client) => {
-  const db = client.db('quiz');
-  const quizCollection = db.collection('questions');
-  const quizRouter = createRouter(quizCollection);
-  app.use('/api/questions', quizRouter);
-})
-.catch(console.error);
+  .then((client) => {
+    const db = client.db('quiz');
+    const quizCollection = db.collection('questions');
+    const quizRouter = createRouter(quizCollection);
+    app.use('/api/questions', quizRouter);
+  })
+  .catch(console.error);
 
 app.listen(3000, function(){
   console.log(`Listening on port ${this.address().port}`);

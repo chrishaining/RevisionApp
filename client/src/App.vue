@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <add-question-form/>
     <questions-list :questions="questions"/>
     <question-info :question="selectedQuestion"/>
     <question-update-form :selected-question="selectedQuestion" />
@@ -11,14 +12,17 @@ import QuestionsList from './components/QuestionsList';
 import QuestionInfo from './components/QuestionInfo';
 import QuestionUpdateForm from './components/QuestionUpdateForm';
 import QuestionService from './services/QuestionService';
-import { eventBus } from '@/main';
+import AddQuestionForm from './components/AddQuestionForm';
+import {eventBus} from '@/main';
 
 export default {
   name: 'app',
   components: {
     'questions-list': QuestionsList,
     'question-info': QuestionInfo,
-    'question-update-form': QuestionUpdateForm
+    'question-update-form': QuestionUpdateForm,
+    'add-question-form': AddQuestionForm
+
   },
   data(){
     return{
@@ -27,6 +31,9 @@ export default {
     }
   },
   mounted(){
+    QuestionService.getQuestions()
+    .then(questions => this.questions = questions)
+    
     eventBus.$on('question-selected', question => {
       this.selectedQuestion = question
     });
@@ -35,9 +42,10 @@ export default {
       const index = this.questions.findIndex(question => question._id === questionToUpdate._id);
       this.questions.splice(index, 1, questionToUpdate);
     });
+    eventBus.$on('submit-card', question => {
+      this.questions.push(question)
+    });
 
-    QuestionService.getQuestions()
-    .then(questions => this.questions = questions)
   }
 }
 

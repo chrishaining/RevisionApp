@@ -13,5 +13,16 @@ export default{
         headers: { 'Content-Type': 'application/json'}
       })
         .then(res => res.json())
-    }
+    },
+
+   addQuestionCard(question) {
+    return fetch(baseURL, {
+      method: "POST",
+      body: JSON.stringify(question),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => res.json())
+  }
 }
