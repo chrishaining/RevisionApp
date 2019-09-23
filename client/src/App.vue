@@ -33,7 +33,7 @@ export default {
   mounted(){
     QuestionService.getQuestions()
     .then(questions => this.questions = questions)
-    
+
     eventBus.$on('question-selected', question => {
       this.selectedQuestion = question
     });
