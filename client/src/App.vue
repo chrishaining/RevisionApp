@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <add-question-form/>
     <questions-list :questions="questions"/>
     <question-info :question="selectedQuestion"/>
 
@@ -10,13 +11,15 @@
 import QuestionsList from './components/QuestionsList';
 import QuestionInfo from './components/QuestionInfo';
 import QuestionService from './services/QuestionService';
+import AddQuestionForm from './components/AddQuestionForm';
 import {eventBus} from '@/main';
 
 export default {
   name: 'app',
   components: {
     'questions-list': QuestionsList,
-    'question-info': QuestionInfo
+    'question-info': QuestionInfo,
+    'add-question-form': AddQuestionForm
 
   },
   data(){
@@ -32,6 +35,12 @@ export default {
     eventBus.$on('question-selected', question => {
       this.selectedQuestion = question
     })
+
+
+      eventBus.$emit('submit-card', question => {
+        QuestionService.addQuestionCard(question)
+        .then(questionWithId => this.questions.push(questionWithId))
+      });
 
   }
 }

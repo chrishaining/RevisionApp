@@ -1,5 +1,5 @@
 <template lang="html">
-  <form class="" action="index.html" method="post">
+  <form v-on:submit.prevent="handleSubmit">
     <h1>Add a new card</h1>
     <label for="question">Add a question</label>
     <input type="text" v-model="question" required>
@@ -7,8 +7,9 @@
     <input type="text" v-model="answer" required>
     <label for="url">Add a URL</label>
     <input type="text" v-model="url">
-    <!-- <label for="topic">Add a topic</label>
-    <input type="text" v-model="topic"> -->
+    <label for="topic">Add a topic</label>
+    <input type="text" v-model="topic">
+    <input type="submit" name="submit" value="Save">
   </form>
 </template>
 
@@ -25,6 +26,11 @@ export default {
       url: "",
       topic: ""
     };
+  },
+  methods: {
+    handleSubmit() {
+      eventBus.$emit('submit-card', this.$data);
+    }
   }
 }
 </script>
