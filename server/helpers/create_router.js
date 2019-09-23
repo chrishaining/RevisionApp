@@ -30,6 +30,23 @@ router.get('/:id', (req, res) => {
   });
 });
 
+// update a question
+router.put('/:id', (req, res) => {
+  const id = req.params.id;
+  const updatedData = req.body;
+  delete updatedData._id;
+
+  collection
+  .findOneAndUpdate({ _id: ObjectId(id) }, { $set: updatedData })
+  .then(result => {
+    res.json(result.value);
+  })
+  .catch((err) => {
+    res.status(500);
+    res.json({ status: 500, error: err });
+  });
+});
+
   return router;
 }
 module.exports = createRouter;
