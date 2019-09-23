@@ -30,17 +30,15 @@ export default {
   },
   mounted(){
     QuestionService.getQuestions()
-    .then(questions => this.questions = questions)
+      .then(questions => this.questions = questions)
 
     eventBus.$on('question-selected', question => {
       this.selectedQuestion = question
     })
 
-
-      eventBus.$emit('submit-card', question => {
-        QuestionService.addQuestionCard(question)
-        .then(questionWithId => this.questions.push(questionWithId))
-      });
+    eventBus.$on('submit-card', question => {
+      this.questions.push(question)
+    });
 
   }
 }
