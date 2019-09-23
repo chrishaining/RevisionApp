@@ -1,5 +1,5 @@
 <template lang="html">
-  <form v-on:submit.prevent="handleSubmit">
+  <form v-on:submit="handleSubmit">
     <h1>Add a new card</h1>
     <label for="question">Add a question</label>
     <input type="text" v-model="question" required>
@@ -16,6 +16,7 @@
 <script>
 
 import {eventBus} from '@/main';
+import QuestionService from '@/services/QuestionService';
 
 export default {
   name: "add-question-form",
@@ -28,8 +29,17 @@ export default {
     };
   },
   methods: {
-    handleSubmit() {
-      eventBus.$emit('submit-card', this.$data);
+    handleSubmit(event) {
+      event.preventDefault()
+      const question = {
+        question: this.question,
+        answer: this.answer,
+        url: this.url,
+        topic: this.topic
+      }
+      QuestionService.addQuestionCard(question)
+      .then(res => eventBus.$emit('submit-card', res));
+
     }
   }
 }
