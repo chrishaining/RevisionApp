@@ -2,13 +2,14 @@
   <div id="app">
     <questions-list :questions="questions"/>
     <question-info :question="selectedQuestion"/>
-
+    <question-update-form />
   </div>
 </template>
 
 <script>
 import QuestionsList from './components/QuestionsList';
 import QuestionInfo from './components/QuestionInfo';
+import QuestionUpdateForm from './components/QuestionUpdateForm';
 import QuestionService from './services/QuestionService';
 import {eventBus} from '@/main';
 
@@ -16,8 +17,8 @@ export default {
   name: 'app',
   components: {
     'questions-list': QuestionsList,
-    'question-info': QuestionInfo
-
+    'question-info': QuestionInfo,
+    'question-update-form': QuestionUpdateForm
   },
   data(){
     return{
