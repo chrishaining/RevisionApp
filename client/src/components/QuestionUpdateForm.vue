@@ -10,16 +10,16 @@
     <label for="url">Topic:</label>
     <input type="text" id="topic" v-model="topic"></input>
 
-    <label for="url">Add a link:</label>
-    <input type="text" id="url" v-model="url"></input>
+    <!-- <label for="url">Add a link:</label>
+    <input type="text" id="url" v-model="url"></input> -->
 
-    <input type="submit" name="submit" value="Update" />
+    <input type="submit" value="Update" id="update" />
   </form>
 </template>
 
 <script>
 import { eventBus } from '@/main';
-// import QuestionService from '@/services/QuestionService.js'
+import QuestionService from '@/services/QuestionService.js'
 
 export default {
   name: 'question-update-form',
@@ -27,17 +27,19 @@ export default {
     return {
       question: '',
       answer: '',
-      url: '',
+      // url: '',
       topic: ''
     };
   },
+  props: ['selectedQuestion'],
   methods: {
-    handleUpdate: function() {
-      eventBus.$emit('question-update', this.question);
-      this.question = '';
-      this.answer = '';
-      this.topic = '';
-      this.url = '';
+    handleUpdate(event) {
+      event.preventDefault();
+      eventBus.$emit('question-update', Object.assign({}, this.selectedQuestion, this.$data));
+      this.question = '',
+      this.answer = '',
+      this.topic = ''
+
     }
   }
 }
