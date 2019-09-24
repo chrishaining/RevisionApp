@@ -8,7 +8,7 @@
     <label for="url">Add a URL</label>
     <textarea type="text" v-model="url"></textarea>
     <label for="topic">Add a topic</label>
-    <textarea v-model="topic"></textarea>
+    <textarea v-model="topic" required></textarea>
     <input type="submit" name="submit" value="Save">
   </form>
 </template>
