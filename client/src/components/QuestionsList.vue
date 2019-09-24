@@ -17,7 +17,6 @@ export default {
   components: {
     'questions-list-item': QuestionsListItem
   }
-
 }
 </script>
 
