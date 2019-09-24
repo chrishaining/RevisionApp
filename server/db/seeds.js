@@ -68,4 +68,34 @@ db.questions.insertMany([
     "url": "https://vuejs.org/v2/guide/computed.html",
     "topic": "Vue"
   },
+
+  {
+    "question": "What is a callback?",
+    "answer": "A function that is used in another function as an argument.",
+    "url": "https://developer.mozilla.org/en-US/docs/Glossary/Callback_function",
+    "topic": "JavaScript"
+  },
+
+  {
+    "question": "What is a higher order function?",
+    "answer": "A function that can take another function as an argument.",
+    "url": "https://www.sitepoint.com/higher-order-functions-javascript/",
+    "topic": "JavaScript"
+  },
+
+  {
+    "question": "In Ruby, what keyword do you use to create a function?",
+    "answer": "Def - this is because you are defining a function.",
+    "url": "https://www.sitepoint.com/higher-order-functions-javascript/",
+    "topic": "Ruby"
+  }
+
+  {
+    "question": "What is instantuation?",
+    "answer": "The process of creating an instance of a class. ",
+    "url": "https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Classes#Instantiation",
+    "topic": "Ruby"
+  }
+
+
 ])
