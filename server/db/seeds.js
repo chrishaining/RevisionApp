@@ -88,14 +88,13 @@ db.questions.insertMany([
     "answer": "Def - this is because you are defining a function.",
     "url": "https://www.sitepoint.com/higher-order-functions-javascript/",
     "topic": "Ruby"
-  }
+  },
 
   {
-    "question": "What is instantuation?",
+    "question": "What is instantiation?",
     "answer": "The process of creating an instance of a class. ",
     "url": "https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Classes#Instantiation",
     "topic": "Ruby"
   }
-
 
 ])
