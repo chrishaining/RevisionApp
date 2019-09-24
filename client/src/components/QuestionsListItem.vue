@@ -11,13 +11,11 @@
       <td v-if="hasBeenMastered">Mastered!</td>
       <img class="mastered-gif" v-if="hasBeenMastered" src="https://thumbs.gfycat.com/InsignificantVibrantAphid.webp">
     </tr>
-    <tr>
-      <td>
-      </td>
-    </tr>
     </table>
-    <button v-if="!hasBeenMastered" v-on:click="addMasteredQuestions">Mark as Mastered</button>
-  </table>
+  <!-- <button v-on:click="question.show = !question.show">Show Answer</button> -->
+  <p v-show="question.show">{{question.answer}}</p>
+  <button v-if="!hasBeenMastered" v-on:click="addMasteredQuestions">Mark as Mastered</button>
+
 </div>
 </template>
 

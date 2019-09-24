@@ -1,4 +1,5 @@
 <template lang="html">
+  <div>
   <form class="addQuestionForm" v-on:submit="handleSubmit">
     <h1>Add a new card</h1>
     <label for="question">Add a question</label>
@@ -8,9 +9,13 @@
     <label for="url">Add a URL</label>
     <textarea type="text" v-model="url"></textarea>
     <label for="topic">Add a topic</label>
-    <textarea v-model="topic" required></textarea>
+    <textarea v-model="topic"></textarea>
     <input type="submit" name="submit" value="Save">
   </form>
+  <div>
+  <img id="pen" src="https://images.squarespace-cdn.com/content/v1/5ba839e47fdcb8cb90744a44/1552606354923-X7FVEZCSI9VEOJQAJF6F/ke17ZwdGBToddI8pDm48kMHvrvYuMOO96aZNC4W0J91Zw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVGzFGyRKEvnFLNedpOxzyA7lUIbsppCyMzD9XoGN4ON4Ju3E9Ef3XsXP1C_826c-iU/drawn-pen-writing-gif-transparent-560573-681746.gif?format=500w"/>
+</div>
+</div>
 </template>
 
 <script>
@@ -53,4 +58,8 @@ export default {
   display: inline-grid;
 }
 
+#pen {
+  text-align: center;
+  width: 50px;
+}
 </style>
