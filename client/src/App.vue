@@ -15,8 +15,7 @@
       <component v-bind:is="component"></component>
       </keep-alive>
     </div>
-    <!-- <add-question-form/>
-    <add-question-topic/> -->
+    <question-filter-form/>
     <questions-list class="questionsList" :questions="questions"/>
     <div class="questionsInfo">
       <question-info :question="selectedQuestion"/>
@@ -33,6 +32,8 @@ import QuestionService from './services/QuestionService';
 import AddQuestionForm from './components/AddQuestionForm';
 import AddQuestionTopic from './components/AddQuestionTopic';
 import {eventBus} from '@/main';
+import QuestionFilterForm from './components/QuestionFilterForm';
+
 
 export default {
   name: 'app',
@@ -42,6 +43,7 @@ export default {
     'question-update-form': QuestionUpdateForm,
     'add-question-form': AddQuestionForm,
     'add-question-topic': AddQuestionTopic,
+    'question-filter-form': QuestionFilterForm
 
   },
   data(){
