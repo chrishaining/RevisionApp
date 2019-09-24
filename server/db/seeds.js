@@ -48,5 +48,11 @@ db.questions.insertMany([
     "answer": "Oooh",
     "url": "https://www.webopedia.com/TERM/S/sequence.html",
     "topic": "PDA"
+  },
+  {
+    "question": "What method do you use to make a string all lower case?",
+    "answer": ".toLowerCase(",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase",
+    "topic": "JavaScript"
   }
 ])

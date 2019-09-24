@@ -15,7 +15,7 @@
       <component v-bind:is="component"></component>
       </keep-alive>
     </div>
-    <question-filter-form/>
+    <question-filter-form :questions="questions"/>
     <questions-list class="questionsList" :questions="questions"/>
     <div class="questionsInfo">
       <question-info :question="selectedQuestion"/>
@@ -51,7 +51,7 @@ export default {
       component: '',
       questions: [],
       selectedQuestion: null,
-      filteredQuestions: []
+      topics: []
     }
   },
   mounted(){
