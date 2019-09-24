@@ -1,8 +1,23 @@
 <template lang="html">
 <div>
-       <p v-on:click="handleClick">{{question.question}}</p>
-       <p v-if="hasBeenMastered">Mastered!</p>
-       <button v-if="!hasBeenMastered" v-on:click="addMasteredQuestions">Mark as Mastered</button>
+  <table>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <td v-on:click="handleClick">{{question.question}}</td>
+      <td v-if="hasBeenMastered">Mastered!</td>
+      <img class="mastered-gif" v-if="hasBeenMastered" src="https://thumbs.gfycat.com/InsignificantVibrantAphid.webp">
+    </tr>
+    <tr>
+      <td>
+      </td>
+    </tr>
+    </table>
+    <button v-if="!hasBeenMastered" v-on:click="addMasteredQuestions">Mark as Mastered</button>
+  </table>
 </div>
 </template>
 
@@ -36,6 +51,28 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 10px;
+}
+
+.mastered-gif{
+  width: 80px;
+}
+
+table {
+  width: 80%;
+  border-collapse: separate;
+}
+
+td, th {
+  text-align: left;
+}
+
+td {
+  padding: 10px 20px 0px 0px;
+}
+
+th {
+  padding: 0px 20px 10px 0px;
+  border-bottom: 1px solid teal;
 }
 
 </style>
