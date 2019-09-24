@@ -35,7 +35,6 @@ import AddQuestionForm from "./components/AddQuestionForm";
 import AddQuestionTopic from "./components/AddQuestionTopic";
 import { eventBus } from "@/main";
 import QuestionFilterForm from "./components/QuestionFilterForm";
-
 export default {
   name: "app",
   components: {
@@ -48,11 +47,21 @@ export default {
   },
   data() {
     return {
+      masteredQuestions: [],
       component: "",
       questions: [],
       selectedQuestion: null,
       selectedTopicFilter: ""
     };
+  },
+  methods: {
+    markMasteredQuestions: function(question) {
+      this.masteredQuestions.push(question)
+    },
+    hasQuestionBeenMastered: function(question){
+      const idsOfMasteredQuestions = (this.masteredQuestions.map(masteredQuestion => masteredQuestion._id))
+      return idsOfMasteredQuestions.includes(question._id)
+    }
   },
   computed: {
     filteredQuestions() {
@@ -66,7 +75,6 @@ export default {
     QuestionService.getQuestions().then(
       questions => (this.questions = questions)
     );
-
     eventBus.$on("question-selected", question => {
       this.selectedQuestion = question;
     });
@@ -85,11 +93,17 @@ export default {
       const index = this.questions.findIndex(question => question._id === id);
       this.questions.splice(index, 1);
     });
-
     //receive information for the filter
     eventBus.$on("topic-selected", topic => {
       this.selectedTopicFilter = topic;
     });
+    eventBus.$on("mastered-question-added", question => this.markMasteredQuestions(question));
+
+
+
+
+
+
   }
 };
 </script>
@@ -100,18 +114,15 @@ export default {
   color: teal;
   font-family: sans-serif;
 }
-
 header,
 .navbar {
   padding: 10px;
   text-align: center;
 }
-
 #laptop {
   text-align: center;
   width: 200px;
 }
-
 button {
   background-color: hsl(180, 100%, 40%);
   border: none;
@@ -122,13 +133,11 @@ button {
   display: inline-block;
   font-size: 16px;
 }
-
 .questionsList {
   position: relative;
   left: 100px;
   top: 20px;
 }
-
 .questionsInfo {
   position: relative;
   left: 100px;
