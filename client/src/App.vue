@@ -1,9 +1,27 @@
 <template>
   <div id="app">
-    <add-question-form/>
-    <questions-list :questions="questions"/>
-    <question-info :question="selectedQuestion"/>
-    <question-update-form v-if="selectedQuestion" :selected-question="selectedQuestion" />
+    <header>
+      <h1>My Coding Pal</h1>
+      <img id="laptop" src="https://cdn.dribbble.com/users/330915/screenshots/3587000/10_coding_dribbble.gif">
+      <div>
+      <button v-on:click="component = 'add-question-topic'">Add a Topic</button>
+      <button v-on:click="component = 'add-question-form'">Add a Question</button>
+      <button v-on:click="component = ''">X</button>
+
+    </div>
+    </header>
+    <div class="navbar">
+      <keep-alive>
+      <component v-bind:is="component"></component>
+      </keep-alive>
+    </div>
+    <!-- <add-question-form/>
+    <add-question-topic/> -->
+    <questions-list class="questionsList" :questions="questions"/>
+    <div class="questionsInfo">
+      <question-info :question="selectedQuestion"/>
+      <question-update-form v-if="selectedQuestion" :selected-question="selectedQuestion" />
+    </div>
   </div>
 </template>
 
@@ -13,6 +31,7 @@ import QuestionInfo from './components/QuestionInfo';
 import QuestionUpdateForm from './components/QuestionUpdateForm';
 import QuestionService from './services/QuestionService';
 import AddQuestionForm from './components/AddQuestionForm';
+import AddQuestionTopic from './components/AddQuestionTopic';
 import {eventBus} from '@/main';
 
 export default {
@@ -21,13 +40,16 @@ export default {
     'questions-list': QuestionsList,
     'question-info': QuestionInfo,
     'question-update-form': QuestionUpdateForm,
-    'add-question-form': AddQuestionForm
+    'add-question-form': AddQuestionForm,
+    'add-question-topic': AddQuestionTopic,
 
   },
   data(){
     return{
+      component: '',
       questions: [],
-      selectedQuestion: null
+      selectedQuestion: null,
+      filteredQuestions: []
     }
   },
   mounted(){
@@ -45,12 +67,11 @@ export default {
     eventBus.$on('submit-card', question => {
       this.questions.push(question)
     });
-
     eventBus.$on('question-delete', (id) => {
       QuestionService.deleteQuestion(id)
       const index = this.questions.findIndex(question => question._id === id);
       this.questions.splice(index, 1);
-});
+    });
 
 
   }
@@ -59,5 +80,45 @@ export default {
 </script>
 
 <style>
+
+#app{
+  background-color: white;
+  color: teal;
+  font-family: sans-serif;
+}
+
+header, .navbar{
+  padding: 10px;
+  text-align: center;
+
+}
+
+#laptop{
+  text-align: center;
+  width: 200px;
+}
+
+button {
+  background-color: hsl(180, 100%, 40%);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.questionsList {
+  position: relative;
+  left: 100px;
+  top: 20px;
+}
+
+.questionsInfo {
+  position: relative;
+  left: 100px;
+  top: 20px;
+}
 
 </style>

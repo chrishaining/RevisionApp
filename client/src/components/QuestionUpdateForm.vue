@@ -1,17 +1,17 @@
 <template lang="html">
-  <form v-on:submit.prevent="handleUpdate">
+  <form class="updateForm" v-on:submit.prevent="handleUpdate">
     <h2>Update Question</h2>
     <label for="question">Question:</label>
-    <input type="text" id="question" :placeholder="selectedQuestion.question" v-model="question" required></input>
+    <textarea id="question" :placeholder="selectedQuestion.question" v-model="question" required></textarea>
 
     <label for="answer">Answer:</label>
-    <input type="text" id="answer" :placeholder="selectedQuestion.answer" v-model="answer" required></input>
+    <textarea id="answer" :placeholder="selectedQuestion.answer" v-model="answer" required></textarea>
 
     <label for="url">Topic:</label>
-    <input type="text" id="topic" :placeholder="selectedQuestion.topic" v-model="topic"></input>
+    <textarea id="topic" :placeholder="selectedQuestion.topic" v-model="topic"></textarea>
 
-    <!-- <label for="url">Add a link:</label>
-    <input type="text" id="url" v-model="url"></input> -->
+    <label for="url">Add a link:</label>
+    <textarea id="url" v-model="url"></textarea>
 
     <input type="submit" value="Update" id="update" />
   </form>
@@ -27,7 +27,7 @@ export default {
     return {
       question: '',
       answer: '',
-      // url: '',
+      url: '',
       topic: ''
     };
   },
@@ -46,4 +46,11 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.updateForm{
+  margin-top: 30px;
+  color: orange;
+  display: inline-grid;
+}
+
 </style>

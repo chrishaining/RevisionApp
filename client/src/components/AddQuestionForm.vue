@@ -1,14 +1,14 @@
 <template lang="html">
-  <form v-on:submit="handleSubmit">
+  <form class="addQuestionForm" v-on:submit="handleSubmit">
     <h1>Add a new card</h1>
     <label for="question">Add a question</label>
-    <input type="text" v-model="question" required>
+    <textarea v-model="question" required></textarea>
     <label for="answer">Add an answer</label>
-    <input type="text" v-model="answer" required>
+    <textarea type="text" v-model="answer" required></textarea>
     <label for="url">Add a URL</label>
-    <input type="text" v-model="url">
+    <textarea type="text" v-model="url"></textarea>
     <label for="topic">Add a topic</label>
-    <input type="text" v-model="topic">
+    <textarea v-model="topic"></textarea>
     <input type="submit" name="submit" value="Save">
   </form>
 </template>
@@ -46,4 +46,11 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.addQuestionForm{
+  font: Tahoma;
+  color: red;
+  display: inline-grid;
+}
+
 </style>

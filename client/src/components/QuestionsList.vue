@@ -1,9 +1,9 @@
-<template>
+<template lang="html">
   <section>
     <h2>Questions</h2>
-    <div>
+    <ul class="questions-list">
     <questions-list-item v-for="question in questions" :key="question._id" :question="question"/>
-  </div>
+  </ul>
 </section>
 </template>
 <script>
@@ -21,6 +21,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="css" scoped>
 
 </style>

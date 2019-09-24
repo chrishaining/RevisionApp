@@ -29,10 +29,9 @@ export default {
 <style scoped>
 /* container for the card */
 .flip-card {
-  background-color: dodgerblue;
+  background-color: white;
   width: 400px;
   height: 200px;
-  border: 1px solid #f1f1f1;
   perspective: 1000px;
 }
 /* needed to position the card */
@@ -57,7 +56,8 @@ export default {
 }
 /* style the front side */
 .flip-card-front {
-  background-color: #bbb;
+  background-color: hsl(180, 100%, 90%)
+;
   color: black;
 }
 /* Style the back side */
