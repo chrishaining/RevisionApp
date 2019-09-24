@@ -5,7 +5,9 @@
     <questions-list-item v-for="question in questions"
     :question="question"
     :key="question._id"
-    :hasBeenMastered="$parent.hasQuestionBeenMastered(question)">
+    :hasBeenMastered="$parent.hasQuestionBeenMastered(question)"
+    :hasNotBeenMastered="$parent.hasQuestionNotBeenMastered(question)">
+    >
     </questions-list-item>
   </ul>
 </section>

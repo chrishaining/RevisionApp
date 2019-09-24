@@ -48,6 +48,7 @@ export default {
   data() {
     return {
       masteredQuestions: [],
+      notMasteredQuestions: [],
       component: "",
       questions: [],
       selectedQuestion: null,
@@ -58,9 +59,16 @@ export default {
     markMasteredQuestions: function(question) {
       this.masteredQuestions.push(question)
     },
+    markNotMasteredQuestions: function(question) {
+      this.notMasteredQuestions.push(question)
+    },
     hasQuestionBeenMastered: function(question){
       const idsOfMasteredQuestions = (this.masteredQuestions.map(masteredQuestion => masteredQuestion._id))
       return idsOfMasteredQuestions.includes(question._id)
+    },
+    hasQuestionNotBeenMastered: function(question){
+      const idsOfNotMasteredQuestions = (this.notMasteredQuestions.map(notMasteredQuestion => notMasteredQuestion._id))
+      return idsOfNotMasteredQuestions.includes(question._id)
     }
   },
   computed: {
@@ -99,6 +107,7 @@ export default {
     });
     eventBus.$on("mastered-question-added", question => this.markMasteredQuestions(question));
 
+    eventBus.$on("not-mastered-question-added", question => this.markNotMasteredQuestions(question));
 
 
 
