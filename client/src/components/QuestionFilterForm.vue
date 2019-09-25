@@ -4,7 +4,7 @@
     <label for="topic">Topics:</label>
     <input list="topics" v-model="selectedTopic" name="topic" />
     <datalist id="topics">
-      <option v-for="topic in topics" :value="topic">{{topic}}</option>
+      <option v-for="topic in topics" :key="topic" :value="topic">{{topic}}</option>
     </datalist>
     <input type="image" id="magnifying_glass" src="https://loading.io/spinners/magnify/index.searching-for-loading-icon.svg" v-on:click="handleSelectTopic">
   </div>

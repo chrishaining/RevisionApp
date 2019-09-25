@@ -2,13 +2,13 @@
   <form class="updateForm" v-on:submit.prevent="handleUpdate">
     <h2>Update Question</h2>
     <label for="question">Question:</label>
-    <textarea id="question" :placeholder="selectedQuestion.question" v-model="question" required></textarea>
+    <textarea id="question"  v-model="question" required></textarea>
 
     <label for="answer">Answer:</label>
-    <textarea id="answer" :placeholder="selectedQuestion.answer" v-model="answer" required></textarea>
+    <textarea id="answer" v-model="answer" required></textarea>
 
     <label for="url">Topic:</label>
-    <textarea id="topic" :placeholder="selectedQuestion.topic" v-model="topic"></textarea>
+    <textarea id="topic" v-model="topic"></textarea>
 
     <label for="url">Add a link:</label>
     <textarea id="url" v-model="url"></textarea>
@@ -25,12 +25,20 @@ export default {
   name: 'question-update-form',
   data() {
     return {
-      question: '',
-      answer: '',
-      url: '',
-      topic: '',
+      question: this.selectedQuestion.question,
+      answer: this.selectedQuestion.answer,
+      url: this.selectedQuestion.url,
+      topic: this.selectedQuestion.topic,
       isMastered: false
     };
+  },
+  watch: {
+    selectedQuestion: function (newQuestion) {
+      this.question = this.selectedQuestion.question;
+      this.answer = this.selectedQuestion.answer;
+      this.url = this.selectedQuestion.url;
+      this.topic = this.selectedQuestion.topic;
+    }
   },
   props: ['selectedQuestion'],
   methods: {
@@ -40,9 +48,9 @@ export default {
       this.question = '',
       this.answer = '',
       this.topic = '',
-      this.isMastered = isMastered
-
-    }
+      this.isMastered = false
+    },
+    
   }
 }
 </script>
