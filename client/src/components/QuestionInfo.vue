@@ -7,9 +7,13 @@
       <div class="flip-card-back">
         <p>{{question.answer}}</p>
         <p><a v-bind:href="question.url" target="_blank">{{question.url}}</a></p>
+
       </div>
     </div>
     <button v-on:click="handleDelete">Delete question</button>
+    <p> Have I Mastered this question? 
+      <input type="checkbox" v-model="question.isMastered"/>
+    </p>
   </div>
 </template>
 

@@ -61,49 +61,49 @@ export default {
   },
   data() {
     return {
-      masteredQuestions: [],
-      notMasteredQuestions: [],
-      managedQuestions: [],
+      // masteredQuestions: [],
+      // notMasteredQuestions: [],
+      // managedQuestions: [],
       component: "",
       questions: [],
       selectedQuestion: null,
       selectedTopicFilter: ""
     };
   },
-  methods: {
-    hasQuestionBeenMastered: function(question){
-      const idsOfMasteredQuestions = (this.masteredQuestions.map(masteredQuestion => masteredQuestion._id))
-      return idsOfMasteredQuestions.includes(question._id)
-    },
-    hasQuestionNotBeenMastered: function(question){
-      const idsOfNotMasteredQuestions = (this.notMasteredQuestions.map(notMasteredQuestion => notMasteredQuestion._id))
-      return idsOfNotMasteredQuestions.includes(question._id)
-    },
-    hasQuestionBeenManaged: function(question){
-      const idsOfManagedQuestions = (this.managedQuestions.map(managedQuestion => managedQuestion._id))
-      return idsOfManagedQuestions.includes(question._id)
-    },
-    markMasteredQuestions: function(question) {
-      // if (this.hasQuestionNotBeenMastered(question))
-      this.masteredQuestions.push(question)
+  // methods: {
+  //   hasQuestionBeenMastered: function(question){
+  //     const idsOfMasteredQuestions = (this.masteredQuestions.map(masteredQuestion => masteredQuestion._id))
+  //     return idsOfMasteredQuestions.includes(question._id)
+  //   },
+  //   hasQuestionNotBeenMastered: function(question){
+  //     const idsOfNotMasteredQuestions = (this.notMasteredQuestions.map(notMasteredQuestion => notMasteredQuestion._id))
+  //     return idsOfNotMasteredQuestions.includes(question._id)
+  //   },
+  //   hasQuestionBeenManaged: function(question){
+  //     const idsOfManagedQuestions = (this.managedQuestions.map(managedQuestion => managedQuestion._id))
+  //     return idsOfManagedQuestions.includes(question._id)
+  //   },
+  //   markMasteredQuestions: function(question) {
+  //     if (this.hasQuestionNotBeenMastered(question))
+  //     this.masteredQuestions.push(question)
 
 
 
 
-      // const index = notMasteredQuestions.indexOf(question._id);
-      // if (index > -1) {
-      //   notMasteredQuestion.splice(index, 1);
-      // }
-    },
-    markNotMasteredQuestions: function(question) {
-      // if (this.hasQuestionBeenMastered(question))
-      this.notMasteredQuestions.push(question)
-    },
-    markManagedQuestions: function(question) {
-      // if (this.hasQuestionNotBeenMastered(question))
-      this.managedQuestions.push(question)
-    },
-  },
+    //   const index = notMasteredQuestions.indexOf(question._id);
+    //   if (index > -1) {
+    //     notMasteredQuestion.splice(index, 1);
+    //   }
+    // },
+    // markNotMasteredQuestions: function(question) {
+    //   if (this.hasQuestionBeenMastered(question))
+    //   this.notMasteredQuestions.push(question)
+    // },
+    // markManagedQuestions: function(question) {
+    //   if (this.hasQuestionNotBeenMastered(question))
+    //   this.managedQuestions.push(question)
+    // },
+  // },
   computed: {
     filteredQuestions() {
       if (!this.selectedTopicFilter) return this.questions;
@@ -138,11 +138,11 @@ export default {
     eventBus.$on("topic-selected", topic => {
       this.selectedTopicFilter = topic;
     });
-    eventBus.$on("mastered-question-added", question => this.markMasteredQuestions(question));
+    // eventBus.$on("mastered-question-added", question => this.markMasteredQuestions(question));
 
-    eventBus.$on("not-mastered-question-added", question => this.markNotMasteredQuestions(question));
+    // eventBus.$on("not-mastered-question-added", question => this.markNotMasteredQuestions(question));
 
-    eventBus.$on("managed-question-added", question => this.markManagedQuestions(question));
+    // eventBus.$on("managed-question-added", question => this.markManagedQuestions(question));
 
 
 

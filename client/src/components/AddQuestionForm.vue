@@ -30,7 +30,8 @@ export default {
       question: "",
       answer: "",
       url: "",
-      topic: ""
+      topic: "",
+      isMastered: false
     };
   },
   methods: {
@@ -40,7 +41,8 @@ export default {
         question: this.question,
         answer: this.answer,
         url: this.url,
-        topic: this.topic
+        topic: this.topic,
+        isMastered: this.isMastered
       }
       QuestionService.addQuestionCard(question)
       .then(res => eventBus.$emit('submit-card', res));

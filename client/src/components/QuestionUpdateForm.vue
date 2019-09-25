@@ -28,7 +28,8 @@ export default {
       question: '',
       answer: '',
       url: '',
-      topic: ''
+      topic: '',
+      isMastered: false
     };
   },
   props: ['selectedQuestion'],
@@ -38,7 +39,8 @@ export default {
       eventBus.$emit('question-update', Object.assign({}, this.selectedQuestion, this.$data));
       this.question = '',
       this.answer = '',
-      this.topic = ''
+      this.topic = '',
+      this.isMastered = isMastered
 
     }
   }
