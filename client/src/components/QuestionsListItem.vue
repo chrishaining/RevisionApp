@@ -19,7 +19,7 @@
 
 
       <!-- if hasNotBeenMastered == true -->
-      <td v-if="hasNotBeenMastered">Sucked!</td>
+      <td v-if="hasNotBeenMastered">Failed!</td>
       <img class="sucked-gif" v-if="hasNotBeenMastered" src="https://thumbs.gfycat.com/BriskParallelAfricanwilddog-size_restricted.gif">
 
     </tr>
@@ -28,7 +28,7 @@
   <!-- <p v-show="question.show">{{question.answer}}</p> -->
   <button class="fade-and-grow" v-if="!hasBeenMastered" v-on:click="addMasteredQuestions">Mark as Mastered</button>
   <button class="fade-and-grow" v-if="!hasBeenManaged" v-on:click="addManagedQuestions">Mark as Managed</button>
-  <button class="fade-and-grow" v-if="!hasNotBeenMastered" v-on:click="addNotMasteredQuestions">Mark as Sucked</button>
+  <button class="fade-and-grow" v-if="!hasNotBeenMastered" v-on:click="addNotMasteredQuestions">Mark as Failed</button>
 
 
 </div>

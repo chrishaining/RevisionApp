@@ -23,7 +23,7 @@
       <div>
         <button class="grow" v-on:click="component = 'add-question-topic'">Add a Topic</button>
         <button class="grow" v-on:click="component = 'add-question-form'">Add a Question</button>
-        <button class="grow" v-on:click="component = ''">X</button>
+        <button class="grow" v-on:click="component = ''">x</button>
       </div>
     </header>
     <div class="navbar">
@@ -86,6 +86,14 @@ export default {
     markMasteredQuestions: function(question) {
       // if (this.hasQuestionNotBeenMastered(question))
       this.masteredQuestions.push(question)
+
+
+
+
+      // const index = notMasteredQuestions.indexOf(question._id);
+      // if (index > -1) {
+      //   notMasteredQuestion.splice(index, 1);
+      // }
     },
     markNotMasteredQuestions: function(question) {
       // if (this.hasQuestionBeenMastered(question))
@@ -169,9 +177,9 @@ button {
   transition:all 0.3s ease;
 }
 
-.fade-and-grow {
+/* .fade-and-grow {
   opacity:0.5;
-}
+} */
 
 .fade-and-grow:hover{
   opacity:2;
