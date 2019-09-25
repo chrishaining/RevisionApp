@@ -21,24 +21,28 @@
         src="https://media.giphy.com/media/hVroWQ82fmn0WmGAxa/giphy.gif"
       />
       <div>
-        <button class="grow" v-on:click="component = 'add-question-topic'">Add a Topic</button>
-        <button class="grow" v-on:click="component = 'add-question-form'">Add a Question</button>
+        <!-- <button class="grow" v-on:click="component = 'add-question-topic'">Add a Topic</button>
+        <button class="grow" v-on:click="component = 'add-question-form'">Add a Question</button> -->
+        <button><a href="#add-form">Add a Question</a></button>
         <button class="grow" v-on:click="component = ''">x</button>
       </div>
     </header>
     <div class="navbar">
-      <keep-alive>
         <component v-bind:is="component"></component>
-      </keep-alive>
     </div>
     <question-filter-form :questions="questions" />
-    <div class="list-and-info">
+    <div id="list-and-info">
       <div class="questionsInfo">
         <question-info :question="selectedQuestion" />
         <question-update-form v-if="selectedQuestion" :selected-question="selectedQuestion" />
       </div>
     </div>
     <questions-list class="questionsList" :questions="filteredQuestions" />
+    <questions-list id="secondList" :questions="filteredQuestions" />
+    <div id="add-form">
+    <add-question-form></add-question-form>
+    <button><a href="#">Back</a></button>
+    </div>
 
   </div>
 </template>
@@ -156,12 +160,9 @@ export default {
 
 <style>
 
-.question-and-info {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+#secondList{
+  color: magenta;
 }
-
 
 .questionsInfo {
   position: relative;
