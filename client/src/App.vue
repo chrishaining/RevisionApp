@@ -3,17 +3,13 @@
     <header class="text-content">
       <div class="text-2">
         <span>My Coding Pal</span>
-
       </div>
       <img
         id="laptop"
         src="https://media.giphy.com/media/hVroWQ82fmn0WmGAxa/giphy.gif"
       />
       <div>
-        <!-- <button class="grow" v-on:click="component = 'add-question-topic'">Add a Topic</button>
-        <button class="grow" v-on:click="component = 'add-question-form'">Add a Question</button> -->
         <button v-on:click="handleAddQuestionClick"><a href="#add-form">Add a Question</a></button>
-        <button class="grow" v-on:click="component = ''">x</button>
       </div>
     </header>
     <div class="navbar">
@@ -22,13 +18,16 @@
     </div>    
     </div>
     <question-filter-form :questions="questions" />
-    <div id="list-and-info">
-      <div class="questionsInfo">
-        <question-info :question="selectedQuestion" />
-        <question-update-form v-if="selectedQuestion" :selected-question="selectedQuestion" />
+    
+    <section class="questions-container">
+      <questions-list :questions="filteredQuestions" />
+      <div id="list-and-info">
+        <div class="questionsInfo">
+          <question-info :question="selectedQuestion" />
+          <question-update-form v-if="selectedQuestion" :selected-question="selectedQuestion" />
+        </div>
       </div>
-    </div>
-    <questions-list class="questionsList" :questions="filteredQuestions" />
+    </section>
   </div>
 </template>
 
@@ -61,35 +60,6 @@ export default {
     };
   },
   methods: {
-    // hasQuestionBeenMastered: function(question){
-    //   const idsOfMasteredQuestions = (this.masteredQuestions.map(masteredQuestion => masteredQuestion._id))
-    //   return idsOfMasteredQuestions.includes(question._id)
-    // },
-    // hasQuestionNotBeenMastered: function(question){
-    //   const idsOfNotMasteredQuestions = (this.notMasteredQuestions.map(notMasteredQuestion => notMasteredQuestion._id))
-    //   return idsOfNotMasteredQuestions.includes(question._id)
-    // },
-    // hasQuestionBeenManaged: function(question){
-    //   const idsOfManagedQuestions = (this.managedQuestions.map(managedQuestion => managedQuestion._id))
-    //   return idsOfManagedQuestions.includes(question._id)
-    // },
-    // markMasteredQuestions: function(question) {
-    //   // if (this.hasQuestionNotBeenMastered(question))
-    //   this.masteredQuestions.push(question)
-    //   // const index = notMasteredQuestions.indexOf(question._id);
-    //   // if (index > -1) {
-    //   //   notMasteredQuestion.splice(index, 1);
-    //   // }
-    // },
-    // markNotMasteredQuestions: function(question) {
-    //   // if (this.hasQuestionBeenMastered(question))
-    //   this.notMasteredQuestions.push(question)
-    // },
-    // markManagedQuestions: function(question) {
-    //   // if (this.hasQuestionNotBeenMastered(question))
-    //   this.managedQuestions.push(question)
-    // },
-
     handleAddQuestionClick: function() {
       this.showAddQuestionForm = true },
 
@@ -140,14 +110,26 @@ export default {
 
 <style>
 
+#app {
+  padding: 24px;
+}
+
 #secondList{
   color: magenta;
 }
 
+.questions-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.questions-container > * {
+  flex-basis: 50%;
+
+}
+
 .questionsInfo {
   position: relative;
-  left: 100px;
-  top: 20px;
   align-items: flex-start;
 }
 
