@@ -23,7 +23,7 @@
       <div>
         <!-- <button class="grow" v-on:click="component = 'add-question-topic'">Add a Topic</button>
         <button class="grow" v-on:click="component = 'add-question-form'">Add a Question</button> -->
-        <button><a href="#add-form">Add a Question</a></button>
+        <button v-on:click="handleAddQuestionClick"><a href="#add-form">Add a Question</a></button>
         <button class="grow" v-on:click="component = ''">x</button>
       </div>
     </header>
@@ -40,7 +40,7 @@
     <questions-list class="questionsList" :questions="filteredQuestions" />
     <questions-list id="secondList" :questions="filteredQuestions" />
     <div id="add-form">
-    <add-question-form></add-question-form>
+    <add-question-form v-if="showAddQuestionForm"></add-question-form>
     <button><a href="#">Back</a></button>
     </div>
 
@@ -68,6 +68,7 @@ export default {
   },
   data() {
     return {
+      showAddQuestionForm: false,
       masteredQuestions: [],
       notMasteredQuestions: [],
       managedQuestions: [],
@@ -93,10 +94,6 @@ export default {
     markMasteredQuestions: function(question) {
       // if (this.hasQuestionNotBeenMastered(question))
       this.masteredQuestions.push(question)
-
-
-
-
       // const index = notMasteredQuestions.indexOf(question._id);
       // if (index > -1) {
       //   notMasteredQuestion.splice(index, 1);
@@ -110,6 +107,10 @@ export default {
       // if (this.hasQuestionNotBeenMastered(question))
       this.managedQuestions.push(question)
     },
+
+    handleAddQuestionClick: function() {
+      this.showAddQuestionForm = true
+    }
   },
   computed: {
     filteredQuestions() {
@@ -135,6 +136,7 @@ export default {
     });
     eventBus.$on("submit-card", question => {
       this.questions.push(question);
+      this.showAddQuestionForm = false;
     });
     eventBus.$on("question-delete", id => {
       QuestionService.deleteQuestion(id);
