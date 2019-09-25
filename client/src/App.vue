@@ -32,11 +32,14 @@
       </keep-alive>
     </div>
     <question-filter-form :questions="questions" />
-    <questions-list class="questionsList" :questions="filteredQuestions" />
-    <div class="questionsInfo">
-      <question-info :question="selectedQuestion" />
-      <question-update-form v-if="selectedQuestion" :selected-question="selectedQuestion" />
+    <div class="list-and-info">
+      <div class="questionsInfo">
+        <question-info :question="selectedQuestion" />
+        <question-update-form v-if="selectedQuestion" :selected-question="selectedQuestion" />
+      </div>
     </div>
+    <questions-list class="questionsList" :questions="filteredQuestions" />
+
   </div>
 </template>
 
@@ -152,6 +155,20 @@ export default {
 </script>
 
 <style>
+
+.question-and-info {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
+.questionsInfo {
+  position: relative;
+  left: 100px;
+  top: 20px;
+  align-items: flex-start;
+}
 
 header,
 .navbar {

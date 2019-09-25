@@ -1,7 +1,7 @@
 <template>
   <div id="filterForm">
-    <button v-on:click="handleSelectTopic">Search</button>
-    <label for="topic">Topics:</label>
+    <button v-on:click="handleSelectTopic">Search by Topic</button>
+    <!-- <label for="topic"></label> -->
     <input list="topics" v-model="selectedTopic" name="topic" />
     <datalist id="topics">
       <option v-for="topic in topics" :value="topic">{{topic}}</option>

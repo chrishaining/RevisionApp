@@ -1,6 +1,6 @@
 <template lang="html">
-  <form class="updateForm" v-on:submit.prevent="handleUpdate">
-    <h2>Update Question</h2>
+  <form class="update-form" v-on:submit.prevent="handleUpdate">
+    <h1>Update Question</h1>
     <label for="question">Question:</label>
     <textarea id="question" :placeholder="selectedQuestion.question" v-model="question" required></textarea>
 
@@ -47,9 +47,11 @@ export default {
 
 <style lang="css" scoped>
 
-.updateForm{
+.update-form{
   margin-top: 30px;
-  color: orange;
+  width: 40%;
+  text-align: center;
+  color: purple;
   display: inline-grid;
 }
 

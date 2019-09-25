@@ -27,12 +27,15 @@ export default {
 }
 </script>
 <style scoped>
+
 /* container for the card */
 .flip-card {
   background-color: white;
-  width: 400px;
-  height: 200px;
+  width: 50%;
+  height: 400px;
   perspective: 1000px;
+  padding: 30px;
+  align-items: center;
 }
 /* needed to position the card */
 .flip-card-inner {
@@ -62,7 +65,7 @@ export default {
 }
 /* Style the back side */
 .flip-card-back {
-  background-color: dodgerblue;
+  background-color: purple;
   color: white;
   transform: rotateY(180deg);
 }
