@@ -1,23 +1,12 @@
 <template>
-  <div>
+  <div id="filterForm">
+    <button v-on:click="handleSelectTopic">Search</button>
     <label for="topic">Topics:</label>
     <input list="topics" v-model="selectedTopic" name="topic" />
     <datalist id="topics">
       <option v-for="topic in topics" :value="topic">{{topic}}</option>
-      <!-- :key="topic"  -->
     </datalist>
-    <button v-on:click="handleSelectTopic">Search</button>
-    <!-- <p v-for="question in questions" :key="question._id"  > -->
-    <!-- <section>
-      <h2>Questions</h2>
-      <ul class="questions-list">
-        <questions-list-item
-          v-for="question in javaScriptQuestions"
-          :key="question._id"
-          :question="question"
-        />
-      </ul>
-    </section> -->
+    <input type="image" id="magnifying_glass" src="https://loading.io/spinners/magnify/index.searching-for-loading-icon.svg" v-on:click="handleSelectTopic">
   </div>
 </template>
 <script>
@@ -49,5 +38,15 @@ export default {
 };
 </script>
 
-<style>
+<style lang="css">
+
+#filterForm {
+  display: inline-block;
+}
+
+#magnifying_glass{
+  width: 45px;
+}
+
+
 </style>

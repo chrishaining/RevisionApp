@@ -6,7 +6,8 @@
     :question="question"
     :key="question._id"
     :hasBeenMastered="$parent.hasQuestionBeenMastered(question)"
-    :hasNotBeenMastered="$parent.hasQuestionNotBeenMastered(question)">
+    :hasNotBeenMastered="$parent.hasQuestionNotBeenMastered(question)"
+    :hasBeenManaged="$parent.hasQuestionBeenManaged(question)"
     >
     </questions-list-item>
   </ul>

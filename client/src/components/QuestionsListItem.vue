@@ -13,6 +13,11 @@
       <td v-if="hasBeenMastered">Mastered!</td>
       <img class="mastered-gif" v-if="hasBeenMastered" src="https://thumbs.gfycat.com/InsignificantVibrantAphid.webp">
 
+      <!-- if hasBeenMastered == true -->
+      <td v-if="hasBeenManaged">Managed!</td>
+      <img class="managed-gif" v-if="hasBeenManaged" src="https://media.giphy.com/media/1yjph8svhJjnuxHGdV/giphy.gif">
+
+
       <!-- if hasNotBeenMastered == true -->
       <td v-if="hasNotBeenMastered">Sucked!</td>
       <img class="sucked-gif" v-if="hasNotBeenMastered" src="https://thumbs.gfycat.com/BriskParallelAfricanwilddog-size_restricted.gif">
@@ -21,8 +26,9 @@
     </table>
   <!-- <button v-on:click="question.show = !question.show">Show Answer</button> -->
   <!-- <p v-show="question.show">{{question.answer}}</p> -->
-  <button v-if="!hasBeenMastered" v-on:click="addMasteredQuestions">Mark as Mastered</button>
-  <button v-if="!hasNotBeenMastered" v-on:click="addNotMasteredQuestions">Mark as Sucked</button>
+  <button class="fade-and-grow" v-if="!hasBeenMastered" v-on:click="addMasteredQuestions">Mark as Mastered</button>
+  <button class="fade-and-grow" v-if="!hasBeenManaged" v-on:click="addManagedQuestions">Mark as Managed</button>
+  <button class="fade-and-grow" v-if="!hasNotBeenMastered" v-on:click="addNotMasteredQuestions">Mark as Sucked</button>
 
 
 </div>
@@ -34,7 +40,7 @@ import {eventBus} from '../main'
 
 export default {
   name: 'questions-list-item',
-  props: ['question', 'hasBeenMastered', 'hasNotBeenMastered'],
+  props: ['question', 'hasBeenMastered', 'hasNotBeenMastered', 'hasBeenManaged'],
   methods: {
     handleClick() {
       eventBus.$emit('question-selected', this.question);
@@ -44,16 +50,18 @@ export default {
     },
     addNotMasteredQuestions(){
     eventBus.$emit("not-mastered-question-added", this.question)
+    },
+    addManagedQuestions(){
+    eventBus.$emit("managed-question-added", this.question)
     }
   }
-
 }
 </script>
 
 <style lang="css" scoped>
 
 button {
-  background-color: lightgrey;
+  background-color: hsl(180, 100%, 40%);
   border: none;
   color: white;
   padding: 5px 10px;
@@ -67,6 +75,10 @@ button {
   width: 80px;
 }
 
+.managed-gif{
+  width: 60px;
+}
+
 .sucked-gif{
   width: 80px;
 }
@@ -75,6 +87,10 @@ table {
   width: 80%;
   border-collapse: separate;
 }
+
+/* tr:hover{
+  background-color: aqua;
+} */
 
 td, th {
   text-align: left;
@@ -86,7 +102,7 @@ td {
 
 th {
   padding: 0px 20px 10px 0px;
-  border-bottom: 1px solid teal;
+  border-bottom: 1px solid lavender;
 }
 
 </style>

@@ -53,8 +53,7 @@ export default {
 <style lang="css" scoped>
 
 .addQuestionForm{
-  font: Tahoma;
-  color: red;
+  color: purple;
   display: inline-grid;
 }
 
