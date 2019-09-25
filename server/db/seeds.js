@@ -55,12 +55,6 @@ db.questions.insertMany([
     "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase",
     "topic": "JavaScript"
   },
-  {
-    "question": "What is a computed property?",
-    "answer": ".toLowerCase()",
-    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase",
-    "topic": "Vue"
-  },
 
   {
     "question": "What is a computed property? How and why would you use one?",
@@ -95,6 +89,13 @@ db.questions.insertMany([
     "answer": "The process of creating an instance of a class. ",
     "url": "https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Classes#Instantiation",
     "topic": "Ruby"
+  },
+
+  {
+    "question": "What is a Vue directive? Give examples.",
+    "answer": "A piece of code in the markup (HTML) that tells the app what to do to a DOM element. Examples - v-bind, v-if, v-on:click",
+    "url": "https://012.vuejs.org/guide/directives.html",
+    "topic": "Vue"
   }
 
 ])

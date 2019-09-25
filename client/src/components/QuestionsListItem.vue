@@ -10,25 +10,25 @@
       <td v-on:click="handleClick">{{question.question}}</td>
 
       <!-- if hasBeenMastered == true -->
-      <td v-if="hasBeenMastered">Mastered!</td>
-      <img class="mastered-gif" v-if="hasBeenMastered" src="https://thumbs.gfycat.com/InsignificantVibrantAphid.webp">
+      <!-- <td v-if="hasBeenMastered">Mastered!</td>
+      <img class="mastered-gif" v-if="hasBeenMastered" src="https://thumbs.gfycat.com/InsignificantVibrantAphid.webp"> -->
 
       <!-- if hasBeenMastered == true -->
-      <td v-if="hasBeenManaged">Managed!</td>
-      <img class="managed-gif" v-if="hasBeenManaged" src="https://media.giphy.com/media/1yjph8svhJjnuxHGdV/giphy.gif">
+      <!-- <td v-if="hasBeenManaged">Managed!</td>
+      <img class="managed-gif" v-if="hasBeenManaged" src="https://media.giphy.com/media/1yjph8svhJjnuxHGdV/giphy.gif"> -->
 
 
       <!-- if hasNotBeenMastered == true -->
-      <td v-if="hasNotBeenMastered">Failed!</td>
-      <img class="sucked-gif" v-if="hasNotBeenMastered" src="https://thumbs.gfycat.com/BriskParallelAfricanwilddog-size_restricted.gif">
+      <!-- <td v-if="hasNotBeenMastered">Failed!</td>
+      <img class="sucked-gif" v-if="hasNotBeenMastered" src="https://thumbs.gfycat.com/BriskParallelAfricanwilddog-size_restricted.gif"> -->
 
     </tr>
     </table>
-  <!-- <button v-on:click="question.show = !question.show">Show Answer</button> -->
-  <!-- <p v-show="question.show">{{question.answer}}</p> -->
-  <button class="fade-and-grow" v-if="!hasBeenMastered" v-on:click="addMasteredQuestions">Mark as Mastered</button>
+  <!-- <button v-on:click="question.show = !question.show">Show Answer</button>
+  <p v-show="question.show">{{question.answer}}</p> -->
+  <!-- <button class="fade-and-grow" v-if="!hasBeenMastered" v-on:click="addMasteredQuestions">Mark as Mastered</button>
   <button class="fade-and-grow" v-if="!hasBeenManaged" v-on:click="addManagedQuestions">Mark as Managed</button>
-  <button class="fade-and-grow" v-if="!hasNotBeenMastered" v-on:click="addNotMasteredQuestions">Mark as Failed</button>
+  <button class="fade-and-grow" v-if="!hasNotBeenMastered" v-on:click="addNotMasteredQuestions">Mark as Failed</button> -->
 
 
 </div>
@@ -40,22 +40,21 @@ import {eventBus} from '../main'
 
 export default {
   name: 'questions-list-item',
-  props: ['question', 'hasBeenMastered', 'hasNotBeenMastered', 'hasBeenManaged'],
+  props: ['question'],
   methods: {
     handleClick() {
       eventBus.$emit('question-selected', this.question);
-    },
-    addMasteredQuestions(){
-    eventBus.$emit("mastered-question-added", this.question)
-    },
-    addNotMasteredQuestions(){
-    eventBus.$emit("not-mastered-question-added", this.question)
-    },
-    addManagedQuestions(){
-    eventBus.$emit("managed-question-added", this.question)
+    }
+    // addMasteredQuestions(){
+    // eventBus.$emit("mastered-question-added", this.question)
+    // },
+    // addNotMasteredQuestions(){
+    // eventBus.$emit("not-mastered-question-added", this.question)
+    // },
+    // addManagedQuestions(){
+    // eventBus.$emit("managed-question-added", this.question)
     }
   }
-}
 </script>
 
 <style lang="css" scoped>
