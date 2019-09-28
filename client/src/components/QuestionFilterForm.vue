@@ -1,13 +1,14 @@
 <template>
   <div id="filterForm">
-    <button v-on:click="handleSelectTopic">Search by Topic</button>
     <!-- <label for="topic"></label> -->
+    <div id="search-box">
     <input list="topics" v-model="selectedTopic" name="topic" />
     <datalist id="topics">
       <option v-for="topic in topics" :key="topic" :value="topic">{{topic}}</option>
     </datalist>
-    <input type="image" id="magnifying_glass" src="https://loading.io/spinners/magnify/index.searching-for-loading-icon.svg" v-on:click="handleSelectTopic">
   </div>
+  <button v-on:keyup="handleSelectTopic" v-on:click="handleSelectTopic">Search by Topic</button>
+</div>
 </template>
 <script>
 import QuestionsListItem from "./QuestionsListItem";
@@ -17,9 +18,9 @@ export default {
   name: "question-filter-form",
   props: ["questions"],
   data() {
-      return{
-          selectedTopic: ''
-      }
+    return{
+      selectedTopic: ''
+    }
   },
   components: {
     "questions-list-item": QuestionsListItem
@@ -41,12 +42,13 @@ export default {
 <style lang="css">
 
 #filterForm {
-  display: inline-block;
+  display: flex;
+  margin: 1em;
+  padding: 1em;
 }
 
-#magnifying_glass{
-  width: 45px;
+#search-box {
+  margin: 0.5em;
 }
-
 
 </style>

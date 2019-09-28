@@ -7,13 +7,13 @@
         </div>
         <div class="flip-card-side flip-card-back">
           <p>{{question.answer}}</p>
-          <p><a v-bind:href="question.url" target="_blank">Click for more info</a></p>
+          <p><a class="links" v-bind:href="question.url" target="_blank">Click for more info</a></p>
         </div>
       </div>
     </div>
-    <button v-on:click="handleDelete">Delete question</button>
-    <label for="isMastered">Have I Mastered this question?</label>
-    <input type="checkbox" name="isMastered" v-model="question.isMastered"/>
+    <!-- <button v-on:click="handleDelete">Delete question</button> -->
+    <!-- <label id="mastered" for="isMastered">Have I Mastered this question?</label> -->
+    <!-- <input type="checkbox" name="isMastered" v-model="question.isMastered"/> -->
   </div>
 </template>
 
@@ -34,10 +34,13 @@ export default {
 
 /* container for the card */
 .flip-card {
-  background-color: white;
+  /* background-color: white; */
   height: 400px;
   perspective: 1000px;
   align-items: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 1em;
 }
 /* needed to position the card */
 .flip-card-inner {
@@ -66,17 +69,28 @@ export default {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  border-radius: 10px;
 }
 /* style the front side */
 .flip-card-front {
-  background-color: hsl(180, 100%, 90%)
-;
+  background-color: #FFB48F;
   color: black;
 }
 /* Style the back side */
 .flip-card-back {
-  background-color: purple;
-  color: white;
+  background-color: #17E9E0;
+  color: black;
   transform: rotateY(180deg);
+  border-radius: 10px;
 }
+
+#mastered {
+  padding: 1em;
+  font-weight: bold;
+}
+
+.links {
+  color: blue;
+}
+
 </style>

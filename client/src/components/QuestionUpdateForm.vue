@@ -1,5 +1,5 @@
 <template lang="html">
-  <form class="update-form" v-on:submit.prevent="handleUpdate">
+  <form class="form" v-on:submit.prevent="handleUpdate">
     <h1>Update Question</h1>
 
     <label for="question">Question:</label>
@@ -14,7 +14,7 @@
     <label for="url">Add a link:</label>
     <textarea id="url" v-model="url"></textarea>
 
-    <input type="submit" value="Update" id="update" />
+    <input class="submit" type="submit" value="Update" id="update" />
   </form>
 </template>
 
@@ -51,20 +51,14 @@ export default {
       this.topic = '',
       this.isMastered = false
     },
-    
+
   }
 }
 </script>
 
 <style lang="css" scoped>
 
-.update-form{
-  width: 100%;
-  padding: 0 40px;
-  box-sizing: border-box;
-  text-align: center;
-  color: purple;
-  display: inline-grid;
-}
+
+
 
 </style>
