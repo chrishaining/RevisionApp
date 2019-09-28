@@ -1,7 +1,7 @@
 <template lang="html">
   <div id="update-form">
-    <form class="form" v-on:submit.prevent="handleUpdate">
-      <h1>Update Question</h1>
+    <form class="form" v-if="question" v-on:submit.prevent="handleUpdate">
+      <h1>Update this Question</h1>
 
       <label for="question">Question:</label>
       <textarea id="question"  v-model="question" required></textarea>

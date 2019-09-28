@@ -3,10 +3,10 @@
     <div v-if="question" class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-side flip-card-front">
-          <p>{{question.question}}</p>
+          <p>Question: {{question.question}}</p>
         </div>
         <div class="flip-card-side flip-card-back">
-          <p>{{question.answer}}</p>
+          <p>Answer: {{question.answer}}</p>
           <p><a class="links" v-bind:href="question.url" target="_blank">Click for more info</a></p>
         </div>
       </div>
