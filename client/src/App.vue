@@ -8,23 +8,20 @@
       <div>
         <button v-on:click="handleAddQuestionClick"><a href="#add-form">Add a Question</a></button>
       </div>
+      <question-filter-form :questions="questions" />
     </header>
     <div class="navbar">
       <div id="add-form">
         <add-question-form v-if="showAddQuestionForm"></add-question-form>
       </div>
     </div>
-    <question-filter-form :questions="questions" />
-
-    <section class="questions-container">
+    <div class="questions-container">
       <questions-list :questions="filteredQuestions" />
-      <div id="list-and-info">
-        <div class="questionsInfo">
-          <question-info :question="selectedQuestion" />
-          <question-update-form v-if="selectedQuestion" :selected-question="selectedQuestion" />
-        </div>
+      <div class="question-card">
+        <question-info :question="selectedQuestion" />
+        <question-update-form v-if="selectedQuestion" :selected-question="selectedQuestion" />
       </div>
-    </section>
+    </div>
   </div>
 </template>
 
@@ -107,95 +104,82 @@ export default {
 
   <style>
 
-  #app {
-    padding: 24px;
-  }
-
-  {/* #secondList{
-    color: magenta;
-  } */}
-
-  .questions-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-end;
-  }
-
-  .questions-container > * {
-    flex-basis: 50%;
-  }
-
-
-
-
-  header,
-  .navbar {
-    padding: 10px;
-    text-align: center;
-    letter-spacing: 3px;
-  }
-
-  .text-2{
-    font-size: 30px;
-    letter-spacing: 5px;
-  }
-
-  .fade-and-grow:hover{
-    opacity:2;
-    -webkit-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    transform: scale(1.3);
-  }
-
-  #laptop {
-    text-align: center;
-    width: 200px;
-  }
-
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100vh;
-    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    color: black;
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-  }
-
-  @keyframes gradientBG {
-    0% {
-      background-position: 0% 50%;
+    #app {
+      padding: 24px;
     }
-    50% {
-      background-position: 100% 50%;
+
+    {/* #secondList{
+      color: magenta;
+    } */}
+
+    .questions-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: flex-end;
     }
-    100% {
-      background-position: 0% 50%;
+
+    .questions-container > * {
+      flex-basis: 50%;
     }
-  }
 
-  .container {
-    width: 100%;
-    position: absolute;
-    top: 35%;
-    text-align: center;
-  }
+    header,
+    .navbar {
+      padding: 10px;
+      text-align: center;
+      letter-spacing: 3px;
+    }
 
-  {/* h3 {
-    color: #eee;
-    font-weight: 100;
-  } */}
+    .text-2{
+      font-size: 30px;
+      letter-spacing: 5px;
+    }
 
-  {/* h5 {
-    color:#eee;
-    font-weight:300;
-  } */}
+    .fade-and-grow:hover{
+      opacity:2;
+      -webkit-transform: scale(1.3);
+      -ms-transform: scale(1.3);
+      transform: scale(1.3);
+    }
 
-  a,
-  a:hover {
-    text-decoration: none;
-    color: white;
-  }
+    #laptop {
+      text-align: center;
+      width: 200px;
+    }
+
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100vh;
+      font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+      color: black;
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .container {
+      width: 100%;
+      position: absolute;
+      top: 35%;
+      text-align: center;
+    }
+
+    a,
+    a:hover {
+      text-decoration: none;
+      color: white;
+    }
 
   </style>
