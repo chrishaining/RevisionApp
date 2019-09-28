@@ -120,4 +120,46 @@ db.questions.insertMany([
   },
 
 
+  {
+    "question": "Which of the following are advantages of an Agile approach? A: Working software is delivered frequently; B: late changes in requirements are welcomed; C: The project can easily get taken off track; D: No working software is produced until late during the life cycle; E: Regular adaptation to changing circumstances",
+    "answer": "A, E. B is also possible ",
+    "url": "https://www.agilealliance.org/agile101/",
+    "topic": "PDA"
+  },
+
+  {
+    "question": "Which good practice in program design looks at the frequency of software failure, where failure is an unacceptable effect or behaviour occuring under permissible operating conditions?",
+    "answer": "Reliability",
+    "url": "https://practicingruby.com/articles/qualities-of-great-software",
+    "topic": "PDA"
+  },
+
+  {
+    "question": "Which good practice in program design looks at the frequency of software failure, where failure is an unacceptable effect or behaviour occuring under permissible operating conditions?",
+    "answer": "Reliability",
+    "url": "https://practicingruby.com/articles/qualities-of-great-software",
+    "topic": "PDA"
+  },
+
+  {
+    "question": "Which of these are functional requirements? A: certification requirements; B: Authentication; C: Capacity; D: Recoverability; E: Administrative functions",
+    "answer": "Certification requirements; Authentication; Administrative functions. Capacity and Recoverability are non-functional requirements.",
+    "url": "https://reqtest.com/requirements-blog/functional-vs-non-functional-requirements/",
+    "topic": "PDA"
+  },
+
+  {
+    "question": "What are some advantages of the Spiral Model? ",
+    "answer": "Good for risk handling; good for large projects; flexibility in requirements; customer satisfaction.",
+    "url": "https://www.geeksforgeeks.org/software-engineering-spiral-model/",
+    "topic": "PDA"
+  },
+
+  {
+    "question": "What are some disadvantages of the Spiral Model? ",
+    "answer": "Complex; expensive; too much is dependent on risk analysis; difficulty in time management",
+    "url": "https://www.geeksforgeeks.org/software-engineering-spiral-model/",
+    "topic": "PDA"
+  },
+
 ])
