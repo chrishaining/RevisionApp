@@ -1,11 +1,11 @@
 <template lang="html">
-  <section>
+  <section class="questions-list">
     <h2>Questions</h2>
     <ul>
     <questions-list-item v-for="question in questions"
     :question="question"
     :key="question._id">
-    
+
     </questions-list-item>
   </ul>
 </section>
@@ -25,5 +25,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.questions-list {
+  text-align: center;
+  border: solid;
+  background-color: #F5E6CC;
+  border-radius: 10px;
+}
 
 </style>

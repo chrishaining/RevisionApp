@@ -70,6 +70,7 @@ export default {
   height: 100%;
   backface-visibility: hidden;
   border-radius: 10px;
+  border: solid;
 }
 /* style the front side */
 .flip-card-front {

@@ -33,9 +33,10 @@ button {
   padding: 1em;
   box-sizing: border-box;
   text-align: center;
-  background-color: #F5E6CC;
+  background-color: #A64AC9;
   display: inline-grid;
   border-radius: 10px;
+  border: solid;
 }
 
 /* .addQuestionForm{ */

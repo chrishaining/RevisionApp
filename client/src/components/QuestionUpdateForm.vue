@@ -1,21 +1,23 @@
 <template lang="html">
-  <form class="form" v-on:submit.prevent="handleUpdate">
-    <h1>Update Question</h1>
+  <div id="update-form">
+    <form class="form" v-on:submit.prevent="handleUpdate">
+      <h1>Update Question</h1>
 
-    <label for="question">Question:</label>
-    <textarea id="question"  v-model="question" required></textarea>
+      <label for="question">Question:</label>
+      <textarea id="question"  v-model="question" required></textarea>
 
-    <label for="answer">Answer:</label>
-    <textarea id="answer" v-model="answer" required></textarea>
+      <label for="answer">Answer:</label>
+      <textarea id="answer" v-model="answer" required></textarea>
 
-    <label for="url">Topic:</label>
-    <textarea id="topic" v-model="topic"></textarea>
+      <label for="url">Topic:</label>
+      <textarea id="topic" v-model="topic"></textarea>
 
-    <label for="url">Add a link:</label>
-    <textarea id="url" v-model="url"></textarea>
+      <label for="url">Add a link:</label>
+      <textarea id="url" v-model="url"></textarea>
 
-    <input class="submit" type="submit" value="Update" id="update" />
-  </form>
+      <input class="submit" type="submit" value="Update" id="update" />
+    </form>
+  </div>
 </template>
 
 <script>
@@ -58,7 +60,10 @@ export default {
 
 <style lang="css" scoped>
 
-
+#update-form {
+  display: flex;
+  justify-content: flex-end;
+}
 
 
 </style>

@@ -69,7 +69,7 @@ td {
 
 th {
   padding: 0px 20px 10px 0px;
-  border-bottom: 1px solid lavender;
+  border-bottom: 1px solid black;
 }
 
 </style>
