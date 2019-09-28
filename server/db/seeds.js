@@ -96,6 +96,28 @@ db.questions.insertMany([
     "answer": "A piece of code in the markup (HTML) that tells the app what to do to a DOM element. Examples - v-bind, v-if, v-on:click",
     "url": "https://012.vuejs.org/guide/directives.html",
     "topic": "Vue"
-  }
+  },
+
+  {
+    "question": "What is Entity Relationship Modelling?",
+    "answer": "A diagram of the entities in a database and the relationships between those entities. We did this when we diagrammed our SQL databases. There are a few links for this - https://www.guru99.com/er-diagram-tutorial-dbms.html",
+    "url": "https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model",
+    "topic": "PDA"
+  },
+
+  {
+    "question": "What is Incremental Methodology?",
+    "answer": "A method of software development where the model is designed, implemented and tested incrementally (a little more is added each time) until the product is finished. Sounds very like Agile.",
+    "url": "https://www.testingexcellence.com/incremental-model/",
+    "topic": "PDA"
+  },
+
+  {
+    "question": "Which good practice in program design refers to the ease with which software can be used on computer confugurations other than its current one? A: Reliability; B: Efficiency; C: Portability; D: Functionality",
+    "answer": "C: Portability",
+    "url": "https://en.wikipedia.org/wiki/Software_portability",
+    "topic": "PDA"
+  },
+
 
 ])
