@@ -2,13 +2,14 @@
   <div id="filterForm">
     <!-- <label for="topic"></label> -->
     <div id="search-box">
-    <input list="topics" v-model="selectedTopic" name="topic" />
-    <datalist id="topics">
-      <option v-for="topic in topics" :key="topic" :value="topic">{{topic}}</option>
-    </datalist>
+      <label for="topics">Select a topic</label>
+      <input v-on:keyup="handleSelectTopic" list="topics" v-model="selectedTopic" name="topic" />
+      <datalist id="topics">
+        <option v-for="topic in topics" :key="topic" :value="topic">{{topic}}</option>
+      </datalist>
+    </div>
+    <!-- <button v-on:click="handleSelectTopic">Search by Topic</button> -->
   </div>
-  <button v-on:keyup="handleSelectTopic" v-on:click="handleSelectTopic">Search by Topic</button>
-</div>
 </template>
 <script>
 import QuestionsListItem from "./QuestionsListItem";

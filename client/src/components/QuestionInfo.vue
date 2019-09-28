@@ -10,7 +10,9 @@
           <p><a class="links" v-bind:href="question.url" target="_blank">Click for more info</a></p>
         </div>
       </div>
+      <!-- <button v-on:click="handleUpdateQuestionClick"><a href="#update-form">Update this Question</a></button> -->
     </div>
+
     <!-- <button v-on:click="handleDelete">Delete question</button> -->
     <!-- <label id="mastered" for="isMastered">Have I Mastered this question?</label> -->
     <!-- <input type="checkbox" name="isMastered" v-model="question.isMastered"/> -->
