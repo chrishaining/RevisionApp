@@ -31,6 +31,7 @@ export default {
   border: solid;
   background-color: #F5E6CC;
   border-radius: 10px;
+  display: flex;
 }
 
 </style>

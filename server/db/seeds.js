@@ -142,12 +142,12 @@ db.questions.insertMany([
   },
 
   {
-    "question": "Which good practice in program design looks at the frequency of software failure, where failure is an unacceptable effect or behaviour occuring under permissible operating conditions?",
-    "answer": "Reliability",
-    "url": "https://practicingruby.com/articles/qualities-of-great-software",
+    "question": "What is a data dictionary?",
+    "answer": "a set of information describing the contents, format, and structure of a database and the relationship between its elements, used to control access to and manipulation of the database.",
+    "url": "https://en.wikipedia.org/wiki/Data_dictionary",
     "topic": "PDA"
   },
-  
+
   {
     "question": "Which of these are functional requirements? A: certification requirements; B: Authentication; C: Capacity; D: Recoverability; E: Administrative functions",
     "answer": "Certification requirements; Authentication; Administrative functions. Capacity and Recoverability are non-functional requirements.",
@@ -166,6 +166,20 @@ db.questions.insertMany([
     "question": "What are some disadvantages of the Spiral Model? ",
     "answer": "Complex; expensive; too much is dependent on risk analysis; difficulty in time management",
     "url": "https://www.geeksforgeeks.org/software-engineering-spiral-model/",
+    "topic": "PDA"
+  },
+
+  {
+    "question": "What are the differences between PROCEDURAL PROGRAMMING and OBJECT ORIENTED PROGRAMMING?",
+    "answer": "PROCEDURAL PROGRAMMING: a list of istructions to tell the computer what to do step by step. OOP: an object is a component of a program that knows how to perform certain actions and how to interact with other elements of the program.",
+    "url": "https://study.com/academy/lesson/object-oriented-programming-vs-procedural-programming.html",
+    "topic": "PDA"
+  },
+
+  {
+    "question": "What is WHITE BOX TESTING?",
+    "answer": "White box testing is testing that requires knowledge of the code. TDD is an example. The opposite to white box testing is black box testing, which doesn't require knowledge of the code.",
+    "url": "https://technologyconversations.com/2013/12/11/black-box-vs-white-box-testing/",
     "topic": "PDA"
   }
 

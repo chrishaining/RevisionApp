@@ -118,17 +118,16 @@ export default {
   .questions-container {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 
   .questions-container > * {
     flex-basis: 50%;
-
   }
 
-  .questionsInfo {
-    position: relative;
-    align-items: flex-start;
-  }
+
+
 
   header,
   .navbar {
