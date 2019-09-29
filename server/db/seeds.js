@@ -195,6 +195,13 @@ db.questions.insertMany([
     "answer": "When you test software to make sure than a new feature/fix has not affected other parts of the software.",
     "url": "http://softwaretestingfundamentals.com/regression-testing/",
     "topic": "PDA"
+  },
+
+  {
+    "question": "What is regression testing?",
+    "answer": "* Functionality, Reliability, * Usability, Efficiency, Maintainability, Portability",
+    "url": "https://practicingruby.com/articles/qualities-of-great-software",
+    "topic": "PDA"
   }
 
 ])
