@@ -198,8 +198,8 @@ db.questions.insertMany([
   },
 
   {
-    "question": "What is regression testing?",
-    "answer": "* Functionality, Reliability, * Usability, Efficiency, Maintainability, Portability",
+    "question": "What are the six qualities of good program design?",
+    "answer": "Functionality, Reliability, Usability, Efficiency, Maintainability, Portability",
     "url": "https://practicingruby.com/articles/qualities-of-great-software",
     "topic": "PDA"
   }
