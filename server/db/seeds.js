@@ -38,14 +38,14 @@ db.questions.insertMany([
 
   {
     "question": "What is iteration? Give an example.",
-    "answer": "A loop that goes through instructions ",
+    "answer": "A loop that goes through instructions. There are conditions for when iteration happens - such as while a particular condition holds. Examples include FOR, WHILE and UNLESS loops. ",
     "url": "https://prezi.com/tvoflvm-1xf_/p3-explain-sequence-selection-and-iteration-as-used-in-computing/",
     "topic": "PDA"
   },
 
   {
     "question": "What is selection? Give an example.",
-    "answer": "One of the three basic programming structures. Selection is when a question is answered and there may be more than one outcome.",
+    "answer": "One of the three basic programming structures. Selection is when a question is answered and there may be more than one outcome. An IF statement is an example of selection.",
     "url": "https://prezi.com/tvoflvm-1xf_/p3-explain-sequence-selection-and-iteration-as-used-in-computing/",
     "topic": "PDA"
   },
@@ -180,6 +180,20 @@ db.questions.insertMany([
     "question": "What is WHITE BOX TESTING?",
     "answer": "White box testing is testing that requires knowledge of the code. TDD is an example. The opposite to white box testing is black box testing, which doesn't require knowledge of the code.",
     "url": "https://technologyconversations.com/2013/12/11/black-box-vs-white-box-testing/",
+    "topic": "PDA"
+  },
+
+  {
+    "question": "What are the four software testing levels?",
+    "answer": "Unit testing (aka component testing); integration testing; system testing; acceptance testing.",
+    "url": "http://softwaretestingfundamentals.com/software-testing-levels/",
+    "topic": "PDA"
+  },
+
+  {
+    "question": "What is regression testing?",
+    "answer": "When you test software to make sure than a new feature/fix has not affected other parts of the software.",
+    "url": "http://softwaretestingfundamentals.com/regression-testing/",
     "topic": "PDA"
   }
 

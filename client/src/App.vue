@@ -16,7 +16,9 @@
       </div>
     </div>
     <div class="questions-container">
-      <questions-list :questions="filteredQuestions" />
+      <div class="list">
+        <questions-list :questions="filteredQuestions" />
+      </div>
       <div class="question-card">
         <question-info :question="selectedQuestion" />
         <question-update-form v-if="selectedQuestion" :selected-question="selectedQuestion" />
@@ -108,16 +110,9 @@ export default {
       padding: 24px;
     }
 
-    {/* #secondList{
-      color: magenta;
-    } */}
-
-    .questions-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: flex-end;
-    }
+.questions-container {
+  display: flex;
+}
 
     .questions-container > * {
       flex-basis: 50%;

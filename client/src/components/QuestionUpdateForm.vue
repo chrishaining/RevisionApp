@@ -60,10 +60,10 @@ export default {
 
 <style lang="css" scoped>
 
-#update-form {
+/* #update-form {
   display: flex;
   justify-content: flex-end;
-}
+} */
 
 
 </style>
