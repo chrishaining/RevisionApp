@@ -202,6 +202,13 @@ db.questions.insertMany([
     "answer": "Functionality, Reliability, Usability, Efficiency, Maintainability, Portability",
     "url": "https://practicingruby.com/articles/qualities-of-great-software",
     "topic": "PDA"
+  },
+
+  {
+    "question": "What is a logic error? Give an example?",
+    "answer": "An error that causes the program to operate incorrectly but not crash. Common examples include: sequencing errors, where a line of code is correctly formed but in the wrong place; errors in calculations, for example subtracting instead of adding; errors when checking conditions, for example using < instead of ≤",
+    "url": "https://www.bbc.co.uk/bitesize/guides/zpqpn39/revision/2",
+    "topic": "PDA"
   }
 
 ])
