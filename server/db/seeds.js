@@ -205,8 +205,15 @@ db.questions.insertMany([
   },
 
   {
-    "question": "What is a logic error? Give an example?",
+    "question": "What is a logic error? Give an example.",
     "answer": "An error that causes the program to operate incorrectly but not crash. Common examples include: sequencing errors, where a line of code is correctly formed but in the wrong place; errors in calculations, for example subtracting instead of adding; errors when checking conditions, for example using < instead of ≤",
+    "url": "https://www.bbc.co.uk/bitesize/guides/zpqpn39/revision/2",
+    "topic": "PDA"
+  },
+
+  {
+    "question": "What is an execution error? Give an example.",
+    "answer": "This is an error that occurs when the program is running. For example, asking the program to divide a value by 0 or trying to open a text file that cannot be found on the system. The program will be translated successfully but when you run the code, it will crash.",
     "url": "https://www.bbc.co.uk/bitesize/guides/zpqpn39/revision/2",
     "topic": "PDA"
   }
