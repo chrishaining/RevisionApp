@@ -216,6 +216,28 @@ db.questions.insertMany([
     "answer": "This is an error that occurs when the program is running. For example, asking the program to divide a value by 0 or trying to open a text file that cannot be found on the system. The program will be translated successfully but when you run the code, it will crash.",
     "url": "https://www.bbc.co.uk/bitesize/guides/zpqpn39/revision/2",
     "topic": "PDA"
+  },
+
+  {
+    "question": "What is encapsulation?",
+    "answer": "A way of structuring data so that direct access to an object's components/data is restricted. It's a principle within OOP. See https://stackify.com/oop-concept-for-beginners-what-is-encapsulation/#targetText=Encapsulation%20is%20one%20of%20the,an%20object%20from%20the%20outside.",
+    "url": "https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)",
+    "topic": "Theory"
+  },
+
+  {
+    "question": "Why is encapsulation important?",
+    "answer": "If we didn't use it,  See https://stackify.com/oop-concept-for-beginners-what-is-encapsulation/#targetText=Encapsulation%20is%20one%20of%20the,an%20object%20from%20the%20outside.",
+    "url": "https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)",
+    "topic": "Theory"
+  },
+
+  {
+    "question": "Discuss: MOST CONSTRAINED VARIABLE",
+    "answer": "It's a heuristic used in problem-solving in artificial intelligence. The heuristic is to find the most constrained part of a problem - it may simplify your thinking. It's a useful concept to keep in mind when trying to understand and solve a problem. A non-coding example: in sudoko, you should start with the column/row/square that has the most squares already filled in. The reason is that this is the column/row/square with the most constraints.",
+    "url": "https://www.amazon.co.uk/Think-Like-Programmer-Introduction-Creative/dp/1593274246",
+    "topic": "Theory"
   }
+
 
 ])
