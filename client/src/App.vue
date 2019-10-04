@@ -114,6 +114,7 @@ export default {
   display: flex;
 }
 
+
     .questions-container > * {
       flex-basis: 50%;
     }
