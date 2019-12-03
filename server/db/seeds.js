@@ -239,5 +239,4 @@ db.questions.insertMany([
     "topic": "Theory"
   }
 
-
 ])
