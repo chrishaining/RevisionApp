@@ -231,13 +231,11 @@ db.questions.insertMany([
     "url": "https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)",
     "topic": "Theory"
   },
-
+  
   {
     "question": "Discuss: MOST CONSTRAINED VARIABLE",
     "answer": "It's a heuristic used in problem-solving in artificial intelligence. The heuristic is to find the most constrained part of a problem - it may simplify your thinking. It's a useful concept to keep in mind when trying to understand and solve a problem. A non-coding example: in sudoko, you should start with the column/row/square that has the most squares already filled in. The reason is that this is the column/row/square with the most constraints.",
     "url": "https://www.amazon.co.uk/Think-Like-Programmer-Introduction-Creative/dp/1593274246",
     "topic": "Theory"
   }
-
-
-])
+    ])
